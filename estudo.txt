@@ -1,0 +1,82 @@
+#API, REST E RESTFUL
+
+Cliente (Client)
+Garçom (Pedidos, levar seus pedidos, para a cozinha) (API)
+Cozinha (Server)
+
+API (Application Programming Interface - Interface de Programação de Aplicação) é basicamente um conjunto
+de rotinas e padrões estabelecidos por uma aplicação, para que outras aplicações possam utilizar as
+funcionalidades desta aplicação.
+
+- Responsável por estabelecer comunicação entre diferentes serviços.
+- Meio de campo entre as tecnologias.
+- Intermediador para troca de informações.
+
+# REST
+
+Rest (Representational State Transfer - Transferência de Estado Representativo)
+
+- Será feita a transferência de maneira simbólica, figurativa, representativa, de maneira didática.
+- A transferência de dados, geralmente, usando protocolo HTTP.
+- O Rest, demilita algumas obrigações nessas transferências de dados.
+- Resources seria então, uma entidade, um objeto.
+
+### NECESSIDADES (Constraints) para ser RESTful
+
+> (Client-Server): Separação do cliente e do armazenamento de dados (servidor), dessa forma, poderemos
+ter uma portabilidade do nosso sistema. 
+
+- Exemplo: usando o React para Web e React Native para o smartphone.
+
+> (Stateless): Cada requisição que o cliente faz para o servidor, deverá conter todas as informações 
+necessárias para o servidor entender e responder (RESPONSE) a requisição (REQUEST). 
+
+- Exemplo: a sessão do usuário deverá ser enviada em todas as requisições, para saber se aquele usuário, 
+- está autenticado e apto a usar os serviços, e o servidor não pode lembrar que o cliente foi autenticado
+- na requisição anterior. 
+
+- Pode ser utilizado por padrão, 'Tokens' para as comunicações.
+
+> (Cacheable): As respostas para uma requisição, deverão ser explicitas ao dizer se aquela requisição,
+pode ou não ser cacheada pelo cliente.
+
+> (Layered System): O cliente acessa a um endpoint, sem precisar saber da complexidade, de quais passos
+estão sendo necessários para o servidor responder a requisição, ou quais outras camadas o servidor estará
+lidando, para que a requisição seja respondida.
+
+> (Code on demand - Opcional): Dá a possibilidade da nossa aplicação pegar códigos, como JS, por exemplo e
+executar no cliente.
+
+
+# RESTful
+
+RESTful é a aplicação nos padrões REST.
+
+### Boas Práticas
+
+> Utilizar verbos HTTP para nossas requisições.
+
+'GET' -> Receber dados de um Resource.
+'POST' -> Enviar dados ou informações para serem processadas por um Resource.
+'PUT' -> Atualizar dados de um Resource.
+'DELETE' -> Deletar um Resource.
+
+> Utilizar plural ou singular na criação dos endpoints? Use de acordo com o padrão escolhido, 
+tudo no singular ou no plural.
+
+> Não deixar barra no final do endpoint.
+
+## Status de Respostas
+
+> '1xx': Informação
+> '2xx': Sucesso
+  * 200: OK
+  * 201: CREATED
+  * 204: Não tem conteúdo PUT POST DELETE
+> '3xx': Redirection
+> '4xx': Client Error
+  * 400: Bad Request
+  * 404: Not Found!
+> '5xx': Server Error
+  * 500: Internal Server Error
+
